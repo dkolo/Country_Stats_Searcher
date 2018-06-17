@@ -12,3 +12,7 @@ function searchCountries() {
   		success: showCountriesList
   	});
 }
+
+function showCountriesList(resp) {
+  countriesList.empty();
+}
