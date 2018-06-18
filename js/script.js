@@ -16,12 +16,12 @@ function searchCountries() {
 function showCountriesList(resp) {
     countriesList.empty();
     resp.forEach(function(item) {
-    	$('<table>').append($('<tr>')).append($('<td>').text('Kraj ')).append($('<td>').text(item.name))
-    	.append($('<tr>')).append($('<td>').text('Pełna nazwa ')).append($('<td>').text(item.altSpellings))
-    	.append($('<tr>')).append($('<td>').text('Nazwa regionu ')).append($('<td>').text(item.subregion))
-    	.append($('<tr>')).append($('<td>').text('Waluta ')).append($('<td>').text(item.currencies))
-    	.append($('<tr>')).append($('<td>').text('Zajmowana powierzchnia ')).append($('<td>').text(item.area))
-    	.append($('<tr>')).append($('<td>').text('Liczba mieszkańców ')).append($('<td>').text(item.population))
+    	$('<table>').addClass( "table table-bordered table-hover" ).append($('<tr>').addClass( "table-primary" ).append($('<td>').text('Country ')).append($('<td>').text(item.name)))
+    	.append($('<tr>').append($('<td>').text('Official name ')).append($('<td>').text(item.altSpellings[2])))
+    	.append($('<tr>').append($('<td>').text('Region ')).append($('<td>').text(item.subregion)))
+    	.append($('<tr>').append($('<td>').text('Currency ')).append($('<td>').text(item.currencies)))
+    	.append($('<tr>').append($('<td>').text('Area (in square kilometres) ')).append($('<td>').text(item.area)))
+    	.append($('<tr>').append($('<td>').text('Population ')).append($('<td>').text(item.population)))
         .appendTo(countriesList);
     });
 }
